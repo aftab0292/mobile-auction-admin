@@ -1,0 +1,88 @@
+//colors
+$white: #ffffff;
+
+//@extend-elements
+//original selectors
+//.loader, .loader:before, .loader:after
+%extend_1 {
+	background: $white;
+	animation: load1 1s infinite ease-in-out;
+	width: 1em;
+	height: 4em;
+}
+
+//original selectors
+//.loader:before, .loader:after
+%extend_2 {
+	position: absolute;
+	top: 0;
+	content: '';
+}
+
+
+.loader {
+	@extend %extend_1;
+	color: $white;
+	text-indent: -9999em;
+	margin: 88px auto;
+	position: relative;
+	font-size: 11px;
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: translateZ(0);
+	animation-delay: -0.16s;
+	&:before {
+		@extend %extend_1;
+		@extend %extend_2;
+		left: -1.5em;
+		animation-delay: -0.32s;
+	}
+	&:after {
+		@extend %extend_1;
+		@extend %extend_2;
+		left: 1.5em;
+	}
+}
+@-webkit-keyframes load1 {
+	0% {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0 0;
+		height: 4em;
+	}
+	80% {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0 0;
+		height: 4em;
+	}
+	100% {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0 0;
+		height: 4em;
+	}
+	40% {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0 -2em;
+		height: 5em;
+	}
+}
+@keyframes load1 {
+	0% {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0 0;
+		height: 4em;
+	}
+	80% {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0 0;
+		height: 4em;
+	}
+	100% {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0 0;
+		height: 4em;
+	}
+	40% {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0 -2em;
+		height: 5em;
+	}
+}
